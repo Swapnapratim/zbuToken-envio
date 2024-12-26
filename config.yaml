@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+contracts:
+- name: TransparentUpgradeableProxy
+  handler: ./src/EventHandlers.js
+  events:
+  - event: AdminChanged(address previousAdmin, address newAdmin)
+  - event: Approval(address indexed owner, address indexed spender, uint256 value)
+  - event: Initialized(uint64 version)
+  - event: Transfer(address indexed from, address indexed to, uint256 value)
+  - event: Upgraded(address indexed implementation)
+networks:
+- id: 97
+  start_block: 46830096
+  contracts:
+  - name: TransparentUpgradeableProxy
+    address:
+    - 0x88E1fF269D8DD9B4F4d6A3319605d7139E31D22e
+- id: 84532
+  start_block: 19714232
+  contracts:
+  - name: TransparentUpgradeableProxy
+    address:
+    - 0x28f915a466a5D4b66e98f5878fCA1d4254F4DA04
+rollback_on_reorg: false

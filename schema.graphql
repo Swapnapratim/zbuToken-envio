@@ -1,0 +1,30 @@
+type ZBU_token_AdminChanged {
+  id: ID!
+  previousAdmin: String!
+  newAdmin: String!
+}
+
+type ZBU_token_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type ZBU_token_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type ZBU_token_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type ZBU_token_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
